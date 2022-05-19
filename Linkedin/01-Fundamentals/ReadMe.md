@@ -170,5 +170,3 @@ fun checkGrade(grade: String) {
 }
 ```
 
-[Course Link]("https://www.linkedin.com/learning/programming-foundations-fundamentals-3/the-fundamentals-of-programming?autoplay=true")
-
