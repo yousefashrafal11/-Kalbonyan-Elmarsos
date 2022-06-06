@@ -368,3 +368,168 @@
 .gallery-item img:hover {
   transform: scale(1.1);
 }
+
+/**************************/
+/* HOW IT WORKS SECTION */
+/**************************/
+
+.section-pricing {
+  padding: 9.6rem 0;
+}
+
+.princing-plan{
+  width: 75%;
+  border-radius: 11px;
+}
+
+.princing-plan--starter{
+  justify-self: end;
+  border: 2px solid #fae5d3;
+  padding: 4.8rem;
+}
+
+.princing-plan--complete{
+  background-color: #fdf2e9;
+  padding: 4.8rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.princing-plan--complete::after {
+  content: "Best Value";
+  position: absolute;
+  top: 6%;
+  right: -18%;
+  text-transform: uppercase;
+  background-color: #ffd43b;
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: #333;
+  padding: 0.6rem 8rem;
+  transform: rotate(45deg);
+}
+
+.plan-header {
+  text-align: center;
+  margin-bottom: 4.8rem;
+}
+
+.plan-name{
+  font-size: 2rem;
+  color: #cf711f;
+  font-weight: 600;
+  margin-bottom: 3.2rem;
+  letter-spacing: 0.75;
+  text-transform: uppercase;
+
+}
+
+.plan-price{
+  font-size: 6.2rem;
+  line-height: 1.6;
+  font-weight: 600;
+  color: #333;
+}
+
+.plan-price span{
+  font-size: 3rem;
+  font-weight: 500;
+  margin-right: .8rem;
+}
+
+.plan-text{
+  font-size: 1.6rem;
+  color: #6f6f6f;
+  letter-spacing: 1.6;
+}
+
+.plan-sing-up{
+  text-align: center;
+  margin-top: 4.8rem;
+}
+
+.plan-details{
+  font-size: 1.6rem;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.feature-icon{
+  color: #e67e22;
+  height: 3.2rem;
+  width: 3.2rem;
+  background-color: #fdf2e9;
+  margin-bottom: 3.2rem;
+  padding: 1.6rem;
+  border-radius: 50%;
+}
+
+.feature-title{
+  font-size: 2.4rem;
+  margin-bottom: 1.6rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.feature-text{
+  font-size: 1.8rem;
+  line-height: 1.8;
+}
+
+/**************************/
+/*CTA SECTION */
+/**************************/
+
+.section-cta {
+  padding: 9.6rem 0;
+}
+
+.cta{
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  /* background-color: #e67e22; */
+  box-shadow: 0 3.2rem 6.4rem rgba(0, 0, 0, 0.15);
+  border-radius: 11px;
+
+  /* background-image: linear-gradient(360deg, red, #e67e22); */
+  /* background-image: linear-gradient(to right, red, #e67e22); */
+  /* background-image: linear-gradient(to right bottom, red, #e67e22); */
+  background-image: linear-gradient(to right bottom, #eb984e, #e67e22);
+
+  /* tem */
+  height: 50rem;
+
+  overflow: hidden;
+}
+
+.cta-text-box{
+  color: #45260a;
+  padding: 4.8rem 6.4rem 6.4rem 6.4rem;
+}
+
+.cta .heading-secondary{
+  color: inherit;
+  /* color: #45260a; */
+  margin-bottom: 3.2rem;
+
+}
+
+.cta-text{
+  font-size: 1.8rem;
+  line-height: 1.8;
+  margin-bottom: 4.8rem;
+}
+
+.cta-img-box{
+  background-image:linear-gradient(to right bottom,
+  rgba(235,151,78,0.35),rgba(230,125,34,0.35)), url(/content/img/eating.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.cta-form{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 3.2rem;
+  row-gap: 2.4rem;
+}

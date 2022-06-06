@@ -30,7 +30,7 @@ Paragraph default: 1.6
 --- 02 COLORS ---
 - Primary: #e67e22
 
-- Tints: #cf711f #fdf2e9
+- Tints: #cf711f #fdf2e9 #fae5d3
 
 - Shades:
 - Accents:
@@ -78,6 +78,10 @@ body {
   display: grid;
   row-gap: 9.6rem;
   column-gap: 9.6rem;
+}
+
+.grid:not(:last-child){
+  margin-bottom: 9.6rem;
 }
 
 .grid--2-cols {
@@ -198,3 +202,4 @@ strong {
 .center-text {
   text-align: center;
 }
+
