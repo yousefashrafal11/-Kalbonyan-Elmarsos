@@ -24,7 +24,7 @@
   list-style: none;
   display: flex;
   align-items: center;
-  gap: 3.2rem;
+  gap: 4.8rem;
 }
 
 .main-nav-link:link,
@@ -504,7 +504,7 @@
       rgba(235, 151, 78, 0.35),
       rgba(230, 125, 34, 0.35)
     ),
-    url(/content/img/eating.jpg);
+    url(/img/eating.jpg);
   background-size: cover;
   background-position: center;
 }
