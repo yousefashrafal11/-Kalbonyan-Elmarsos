@@ -87,3 +87,53 @@
 // console.log(y === window.y);
 // console.log(z === window.z);
 
+///////////////////////////////////////
+// The this Keyword in Practice
+// console.log(this);
+
+// const calcAge = function (birthYear) {
+//   console.log(2037 - birthYear);
+//   console.log(this);
+// };
+// calcAge(1992);
+
+// const calcAgeArrow = birthYear => {
+//   console.log(2037 - birthYear);
+//   console.log(this);
+// };
+
+// calcAgeArrow(1980);
+
+// const youssef = {
+//   year: 1991,
+//   calcAge: function () {
+//     console.log(this);
+//     console.log(2037 - this.year);
+//   },
+// };
+// youssef.calcAge();
+
+// const matilda = {
+//   year: 2017,
+// };
+
+// matilda.calcAge = youssef.calcAge;
+// matilda.calcAge();
+
+// const f = youssef.calcAge;
+// f();
+
+///////////////////////////////////////
+// Regular Functions vs. Arrow Functions
+// var firstName = 'Matilda';
+
+const youssef = {
+  firstName: 'Youssef',
+  year: 1992,
+  calcAge: function () {
+    console.log(this);
+    console.log(2037 - this.year);
+  },
+
+  great: () => console.log(`Hey ${this}`),
+};
