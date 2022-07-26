@@ -125,15 +125,95 @@
 
 ///////////////////////////////////////
 // Regular Functions vs. Arrow Functions
+
 // var firstName = 'Matilda';
 
-const youssef = {
-  firstName: 'Youssef',
-  year: 1992,
-  calcAge: function () {
-    console.log(this);
-    console.log(2037 - this.year);
-  },
+// const youssef = {
+//   firstName: 'Youssef',
+//   year: 1992,
+//   calcAge: function () {
+//     console.log(this);
+//     console.log(2037 - this.year);
 
-  great: () => console.log(`Hey ${this}`),
+//     const isMillenial = function () {
+//       console.log(this);
+//       console.log(this.year >= 1981 && this.year <= 1996);
+//     };
+//     isMillenial();
+//   },
+
+//   great: () => {
+//     console.log(this);
+//     console.log(`Hey ${this.firstName}`);
+//   },
+// };
+
+// youssef.great();
+// youssef.calcAge();
+
+// const addExpr = function (a, b) {
+//   console.log(arguments);
+//   return a + b;
+// };
+// addExpr(2, 3);
+
+// var addArrow = (a, b) => a + b;
+
+///////////////////////////////////////
+// Objects vs. primitives
+/*let age = 30;
+let oldAge = age;
+age = 31;
+console.log(age);
+console.log(oldAge);
+
+const me = {
+  name: 'Jonas',
+  age: 30,
 };
+
+const friend = me;
+friend.age = 27;
+console.log('Friend:', friend);
+console.log('Me', me);
+*/
+
+///////////////////////////////////////
+// Primitives vs. Objects in Practice
+
+// Primitive types
+
+let lastName = 'Ashraf';
+let oldLastName = lastName;
+
+lastName = 'El Sayed';
+console.log(lastName, oldLastName);
+
+// Reference types
+const jessica = {
+  firstName: 'jessica',
+  lastName: 'El Sayed',
+  age: 27,
+};
+
+const marriedJessica = jessica;
+marriedJessica.lastName = 'Davis';
+console.log('Before Marriage:', jessica);
+console.log('After Marriage:', marriedJessica);
+// marriedJessica = {};
+
+// Copying objects
+const jessica2 = {
+  firstName: 'jessica',
+  lastName: 'El Sayed',
+  age: 27,
+  family: ['Alice', 'Bob'],
+};
+
+const jessicaCopy = Object.assign({}, jessica2);
+jessicaCopy.lastName = 'Davis';
+console.log('Before Marriage:', jessica2);
+console.log('After Marriage:', jessicaCopy);
+
+jessicaCopy.family.push('Mary');
+jessicaCopy.family.push('John');
