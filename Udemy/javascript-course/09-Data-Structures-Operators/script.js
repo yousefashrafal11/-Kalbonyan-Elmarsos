@@ -23,6 +23,68 @@ const flights =
     },
   };
 
+  const airline = 'TAP Air Portugal';
+  console.log(airline.toLowerCase());
+  console.log(airline.toUpperCase());
+
+  // FIX capitalization in name
+  const passenger = "YoUsSF"; // Youssef
+  const passengerLower = passenger.toLowerCase();
+  console.log(passengerLower);
+  const passengerCorrect = passengerLower[0].toUpperCase();
+  console.log(passengerCorrect);
+  const passengerCorrect1 = passengerLower[0].toUpperCase() + passengerLower.slice(1)
+  console.log(passengerCorrect1);
+  
+  // comparing Emails
+  const email = "hello@youssef.io";
+  const loginEmail = '  Hello@Youssef.Io ';
+/*  console.log(loginEmail);
+  const lowerEmail = loginEmail.toLowerCase();
+  console.log(lowerEmail);
+  const trimedEmail = lowerEmail.trim(); //The trim() method removes whitespace from both ends of a string and returns a new string
+  console.log(trimedEmail);
+*/
+const normalizedEmail = loginEmail.toLowerCase().trim();
+console.log(normalizedEmail);
+  console.log(email === normalizedEmail);
+
+  const priceGB = '288,97£';
+  console.log(priceGB );
+  const priceUS = priceGB.replace('£', '$').replace(',', '.');
+  console.log(priceUS);
+  
+  const announcement =
+  'All passengers come to boarding door 23. Boarding door 23!';
+  console.log(announcement.replace('door', 'gate'));
+  console.log(announcement.replaceAll('door', 'gate'));
+  console.log(announcement.replaceAll(/door/g, 'gate'));//here same result replaceAll() function
+
+  const plane = "Airbus A320neo";
+  console.log(plane.includes('A320'));// The includes() method performs a case-sensitive search to determine whether one string may be found within another string, returning true or false as appropriate.
+
+  console.log(plane.includes('bus'));
+  console.log(plane.startsWith('bus'));//The startsWith() method determines whether a string begins with the characters of a specified string, returning true or false as appropriate.
+  
+  if(plane.startsWith('Airbus') && plane.endsWith('neo')){
+    console.log('Part of the New Airbus family');
+  }
+  
+  // Practice exercise
+  const checkBaggage = function (items){
+    const baggage = items.toLowerCase();
+    if(baggage.includes('knife') || baggage.includes('gun')){
+      console.log('You are NOT allowed on board');
+    }else{
+      console.log('welcome aboard!');
+    }
+  }
+  
+  checkBaggage('I have a laptop, some Food and a pocket Knife');
+  checkBaggage('Socks and camera');
+  checkBaggage('Got some snacks and a gun for protection');
+  
+/*
   ///////////////////////////////////////
 // Working With Strings - Part 1
 const airline = 'TAP Air Portugal';
@@ -33,38 +95,42 @@ console.log(plane[1]);
 console.log(plane[2]);
 console.log('B737'[0]);
 
-// console.log(airline.length);
-// console.log('B737'.length);
+console.log(airline.length);
+console.log('B737'.length);
 
-// console.log(airline.indexOf('r'));
-// console.log(airline.lastIndexOf('r'));
+console.log(airline.indexOf('Air')); //The indexOf() method returns the first index at which a given element can be found in the array, or -1 if it is not present.
+console.log(airline.lastIndexOf('P')); //The lastIndexOf() method returns the last index at which a given element can be found in the array, or -1 if it is not present.
 // console.log(airline.indexOf('portugal'));
 
-// console.log(airline.slice(4));
-// console.log(airline.slice(4, 7));
+
+
+console.log(airline.slice(8));
+console.log(airline.slice(4, 7));
+
+const animals = ['ant', 'bison', 'camel', 'duck', 'elephant'];
+console.log(animals.slice(1,3));
 
 // console.log(airline.slice(0, airline.indexOf(' ')));
 // console.log(airline.slice(airline.lastIndexOf(' ') + 1));
 
-// console.log(airline.slice(-2));
-// console.log(airline.slice(1, -1));
+console.log(airline.slice(-2)); //and then it will start counting from the end. Or actually start extracting from the end.  So these are the last two letters from Portugal.
+console.log(airline.slice(1, -1));
 
-// const checkMiddleSeat = function (seat) {
-//   // B and E are middle seats
-//   const s = seat.slice(-1);
-//   if (s === 'B' || s === 'E') console.log('You got the middle seat 😬');
-//   else console.log('You got lucky 😎');
-// };
+const checkMiddleSeat = function (seat) {
+  // B and E are middle seats
+  const s = seat.slice(-1);
+  if (s === 'B' || s === 'E') console.log('You got the middle seat 😬');
+  else console.log('You got lucky 😎');
+};
 
-// checkMiddleSeat('11B');
-// checkMiddleSeat('23C');
-// checkMiddleSeat('3E');
+checkMiddleSeat('11B');
+checkMiddleSeat('23C');
+checkMiddleSeat('3E');
 
-// console.log(new String('jonas'));
-// console.log(typeof new String('jonas'));
-
-// console.log(typeof new String('jonas').slice(1));
-
+console.log(new String('Youssef'));
+console.log(typeof new String('Youssef'));
+console.log(typeof new String('Youssef').slice(1));
+*/
 
 /*
 ///////////////////////////////////////
