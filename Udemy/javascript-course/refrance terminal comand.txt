@@ -1,0 +1,17 @@
+npm run start
+
+npm i regenerator-runtime
+
+npm i core-js
+
+npm run build
+
+npx parcel index.html
+
+npm i parcel --save-dev
+
+npm i lodash-es
+
+npm install leaflet
+
+npm init // install package json
