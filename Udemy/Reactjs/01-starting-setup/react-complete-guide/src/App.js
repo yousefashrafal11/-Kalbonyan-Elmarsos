@@ -1,6 +1,10 @@
+import React from "react";
 // import logo from "./logo.svg";
-import ExpenseItem from "./components/ExpenseItem";
-import "./App.css";
+// import ExpenseItem from "./components/ExpenseItem";
+// import "./App.css";
+
+import { Expenses, Example } from "./components/Expenses/Expenses";
+
 ///////////////////////////////
 // Outputting Dynamic Data & Working with Expressions in JSX
 /*
@@ -21,7 +25,10 @@ function App() {
 ///////////////////////////////////
 ////  Passing Data via "props"
 
-function App() {
+// Normal function
+// function App() {
+// arrow function
+const App = () => {
   const expense = [
     {
       id: "e1",
@@ -44,36 +51,23 @@ function App() {
     },
   ];
 
+  //this is happening under the hood and how React works.
+
+  /*
+  return React.createElement(
+    "div",
+    {},
+    React.createElement("h2", {}, "Let's get started!"),
+    React.createElement(Expenses, { items: expense })
+  );
+  */
+
   return (
     <div className="App">
-      <div>
-        <h2>Let's get started!</h2>
-        <ExpenseItem
-          id={expense[0].id}
-          title={expense[0].title}
-          amount={expense[0].amount}
-          date={expense[0].date}
-        />
-        <ExpenseItem
-          id={expense[1].id}
-          title={expense[1].title}
-          amount={expense[1].amount}
-          date={expense[1].date}
-        />
-        <ExpenseItem
-          id={expense[2].id}
-          title={expense[2].title}
-          amount={expense[2].amount}
-          date={expense[2].date}
-        />
-        <ExpenseItem
-          id={expense[3].id}
-          title={expense[3].title}
-          amount={expense[3].amount}
-          date={expense[3].date}
-        />
-      </div>
+      <h2>Let's get started!</h2>
+      <Expenses items={expense} />
+      <Example />
     </div>
   );
-}
+};
 export default App;
