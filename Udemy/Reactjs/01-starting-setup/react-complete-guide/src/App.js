@@ -4,6 +4,7 @@ import React from "react";
 // import "./App.css";
 
 import { Expenses, Example } from "./components/Expenses/Expenses";
+import NewExpense from "./components/NewExpense/NewExpense";
 
 ///////////////////////////////
 // Outputting Dynamic Data & Working with Expressions in JSX
@@ -61,10 +62,9 @@ const App = () => {
     React.createElement(Expenses, { items: expense })
   );
   */
-
   return (
     <div className="App">
-      <h2>Let's get started!</h2>
+      <NewExpense />
       <Expenses items={expense} />
       <Example />
     </div>
