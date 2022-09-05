@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import "./NewExpenseForm.css";
 
-const ExpenseForm = () => {
+const ExpenseForm = (props) => {
   // Working with Multiple States
   /*
     const [enterTitle, setEnterTitle] = useState("");
@@ -78,7 +78,10 @@ const ExpenseForm = () => {
       amount: enterAmount,
       date: new Date(enterDate),
     };
-    console.log(expenseData);
+
+    props.onSaveExpenseData(expenseData);
+
+    // Make Empty input after submit
     setEnterTitle("");
     setEnterAmount("");
     setEnterDate("");
