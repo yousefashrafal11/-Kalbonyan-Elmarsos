@@ -4,6 +4,7 @@ import ExpenseItem from "./ExpenseItem";
 import Card from "../UI/Card";
 import ExpensesFilter from "./ExpensesFilter";
 import ExpensesList from "./ExpensesList";
+import ExpensesChart from "./ExpensesChart";
 import "./Expenses.css";
 
 // Normal function
@@ -106,6 +107,7 @@ export const Expenses = (props) => {
         {/*Third way condition */}
         {/* {expenseContent} */}
 
+        <ExpensesChart expenses={filteredExpenses} />
         {/*fourth way condition */}
         <ExpensesList item={filteredExpenses} />
       </Card>
