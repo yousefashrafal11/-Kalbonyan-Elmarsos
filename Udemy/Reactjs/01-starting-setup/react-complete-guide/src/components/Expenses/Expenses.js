@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import ExpenseItem from "./ExpenseItem";
 import Card from "../UI/Card";
 import ExpensesFilter from "./ExpensesFilter";
+import ExpensesList from "./ExpensesList";
 import "./Expenses.css";
 
 // Normal function
@@ -11,7 +12,7 @@ import "./Expenses.css";
 export const Expenses = (props) => {
   // 1) here make arrow function make check if it make change
   // 2) here use state function
-  const [filteredYear, setFilteredYear] = useState("2020");
+  const [filteredYear, setFilteredYear] = useState("2022");
 
   const filterChangeHandler = (selectedYear) => {
     setFilteredYear(selectedYear);
@@ -24,6 +25,20 @@ export const Expenses = (props) => {
 
   // Here I make test print data
   // console.log(props.items);
+
+  // third way condition
+  // let expenseContent = <p> No expenses found</p>;
+
+  // if (filteredExpenses.length > 0) {
+  //   expenseContent = filteredExpenses.map((expense) => (
+  //     <ExpenseItem
+  //       key={expense.id}
+  //       title={expense.title}
+  //       amount={expense.amount}
+  //       date={expense.date}
+  //     />
+  //   ));
+  // }
 
   return (
     <div>
@@ -58,14 +73,41 @@ export const Expenses = (props) => {
           date={props.items[3].date}
         /> */}
         {/* here we use map instead above component  */}
-        {filteredExpenses.map((expense) => (
-          <ExpenseItem
-            key={expense.id}
-            title={expense.title}
-            amount={expense.amount}
-            date={expense.date}
-          />
-        ))}
+
+        {/* first way condition */}
+
+        {/* {filteredExpenses.length === 0 ? (
+          <p> No expenses found</p>
+        ) : (
+          filteredExpenses.map((expense) => (
+            <ExpenseItem
+              key={expense.id}
+              title={expense.title}
+              amount={expense.amount}
+              date={expense.date}
+            />
+          ))
+        )} */}
+
+        {/* Second way condition */}
+
+        {/* {filteredExpenses.length === 0 && <p> No expenses found</p>}
+
+        {filteredExpenses.length > 0 &&
+          filteredExpenses.map((expense) => (
+            <ExpenseItem
+              key={expense.id}
+              title={expense.title}
+              amount={expense.amount}
+              date={expense.date}
+            />
+          ))} */}
+
+        {/*Third way condition */}
+        {/* {expenseContent} */}
+
+        {/*fourth way condition */}
+        <ExpensesList item={filteredExpenses} />
       </Card>
     </div>
   );

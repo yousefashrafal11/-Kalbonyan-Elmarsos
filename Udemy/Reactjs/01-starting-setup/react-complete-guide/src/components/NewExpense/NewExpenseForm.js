@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 
 import "./NewExpenseForm.css";
-
 const ExpenseForm = (props) => {
   // Working with Multiple States
   /*
@@ -108,7 +107,7 @@ const ExpenseForm = (props) => {
           <label>Date</label>
           <input
             type="date"
-            min="2019-01-01"
+            min="2020-01-01"
             step="2022-12-31"
             value={enterDate}
             onChange={dateChangeHandler}
@@ -116,6 +115,9 @@ const ExpenseForm = (props) => {
         </div>
       </div>
       <div className="new-expense__actions">
+        <button type="button" onClick={props.onCancel}>
+          Cancel
+        </button>
         <button type="submit">Add Expense</button>
       </div>
     </form>
