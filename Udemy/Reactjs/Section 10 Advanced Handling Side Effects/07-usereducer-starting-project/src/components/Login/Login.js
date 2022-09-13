@@ -1,8 +1,9 @@
-import React, { useState, useEffect, useReducer } from "react";
+import React, { useState, useEffect, useReducer, useContext } from "react";
 
 import Card from "../UI/Card/Card";
 import classes from "./Login.module.css";
 import Button from "../UI/Button/Button";
+import AuthContext from "../store/auth-context";
 
 //todo -- here use Reduce function to Email
 const emailReduce = (state, action) => {
@@ -45,10 +46,13 @@ const Login = (props) => {
   //todo-- Here use Reduce 👇 function optional use name parmters
   const [emailState, dispatchEmail] = useReducer(emailReduce, {
     value: "",
-    isValid: undefined,
-    // isValid: null,
+    isValid: null,
+    // isValid: undefined,
     // isValid: false,
   });
+
+  //todo -- Here comming Context💪💪💪💪
+  const authCtx = useContext(AuthContext);
 
   //todo-- Here use Reduce Email 👇optional use name parmters
   const [passwordState, dispatchPassword] = useReducer(passwordReduce, {
@@ -117,6 +121,7 @@ const Login = (props) => {
 
   const submitHandler = (event) => {
     event.preventDefault();
+    //! Here instead of we use 👉 [props] we used 👉[Context]
     props.onLogin(emailState.value, passwordState.value);
   };
 
