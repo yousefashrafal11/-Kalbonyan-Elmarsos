@@ -1,9 +1,16 @@
-import React, { useState, useEffect, useReducer, useContext } from "react";
+import React, {
+  useState,
+  useEffect,
+  useReducer,
+  useContext,
+  useRef,
+} from "react";
 
 import Card from "../UI/Card/Card";
 import classes from "./Login.module.css";
 import Button from "../UI/Button/Button";
 import AuthContext from "../store/auth-context";
+import Input from "../UI/Card/Input/Input";
 
 //todo -- here use Reduce function to Email
 const emailReduce = (state, action) => {
@@ -47,18 +54,20 @@ const Login = (props) => {
   const [emailState, dispatchEmail] = useReducer(emailReduce, {
     value: "",
     isValid: null,
-    // isValid: undefined,
-    // isValid: false,
   });
-
-  //todo -- Here comming Context💪💪💪💪
-  const authCtx = useContext(AuthContext);
 
   //todo-- Here use Reduce Email 👇optional use name parmters
   const [passwordState, dispatchPassword] = useReducer(passwordReduce, {
     value: "",
     isValid: null,
   });
+
+  //todo -- Here comming Context💪💪💪💪
+  const authCtx = useContext(AuthContext);
+
+  //todo -- Here we use Ref function
+  const emailInputRef = useRef();
+  const passwordInputRef = useRef();
 
   useEffect(() => {
     console.log("EFFECT RUNNING");
@@ -122,27 +131,40 @@ const Login = (props) => {
   const submitHandler = (event) => {
     event.preventDefault();
     //! Here instead of we use 👉 [props] we used 👉[Context]
-    props.onLogin(emailState.value, passwordState.value);
+    if (formIsValid) {
+      authCtx.onLogin(emailState.value, passwordState.value);
+    } else if (!emailIsValid) {
+      emailInputRef.current.activate();
+    } else {
+      passwordInputRef.current.focus();
+    }
   };
 
   return (
     <Card className={classes.login}>
       <form onSubmit={submitHandler}>
-        <div
-          className={`${classes.control} ${
-            emailState.isValid === false ? classes.invalid : ""
-          }`}
-        >
-          <label htmlFor="email">E-Mail</label>
-          <input
-            type="email"
-            id="email"
-            value={emailState.value}
-            onChange={emailChangeHandler}
-            onBlur={validateEmailHandler}
-          />
-        </div>
-        <div
+        {/* //! Here make input feild from input file */}
+        <Input
+          ref={emailInputRef}
+          id="email"
+          type="email"
+          label="E-Mail"
+          isValid={emailIsValid}
+          value={emailState.value}
+          onChange={emailChangeHandler}
+          onBlur={validateEmailHandler}
+        />
+        <Input
+          ref={passwordInputRef}
+          id="password"
+          type="password"
+          label="Password"
+          isValid={passwordIsValid}
+          value={passwordState.value}
+          onChange={passwordChangeHandler}
+          onBlur={validatePasswordHandler}
+        />
+        {/* <div
           className={`${classes.control} ${
             passwordState.isValid === false ? classes.invalid : ""
           }`}
@@ -155,7 +177,7 @@ const Login = (props) => {
             onChange={passwordChangeHandler}
             onBlur={validatePasswordHandler}
           />
-        </div>
+        </div> */}
         <div className={classes.actions}>
           <Button type="submit" className={classes.btn} disabled={!formIsValid}>
             Login

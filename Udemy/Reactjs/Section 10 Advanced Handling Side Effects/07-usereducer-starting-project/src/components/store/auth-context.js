@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 const AuthContext = React.createContext({
   // isLoading: false,
@@ -7,27 +7,17 @@ const AuthContext = React.createContext({
   onLogin: (email, password) => {},
 });
 
-export default AuthContext;
-
-/*
-import React, { useState, useEffect } from "react";
-
-const AuthContext = React.createContext({
-  isLoggedIn: false,
-  onLogout: () => {},
-  onLogin: (email, password) => {},
-});
-
-//todo -- Here creacte authcontext provider without app.js file
 export const AuthContextProvider = (props) => {
   //! Here we create useState
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   useEffect(() => {
     const storedUserLoggedInInformation = localStorage.getItem("isLoggedIn");
 
-    if (storedUserLoggedInInformation === "1") {
-      setIsLoggedIn(true);
-    }
+    // if (storedUserLoggedInInformation === "1") {
+    //   setIsLoggedIn(true);
+    // }
+
+    storedUserLoggedInInformation === "1" && setIsLoggedIn(true);
   }, []);
 
   const logoutHandler = () => {
@@ -43,7 +33,7 @@ export const AuthContextProvider = (props) => {
   return (
     <AuthContext.Provider
       value={{
-        isloggedIn: isLoggedIn,
+        isLoggedIn: isLoggedIn,
         onLogout: logoutHandler,
         onLogin: loginHandler,
       }}
@@ -52,6 +42,4 @@ export const AuthContextProvider = (props) => {
     </AuthContext.Provider>
   );
 };
-
 export default AuthContext;
-*/
