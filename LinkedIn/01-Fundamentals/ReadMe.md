@@ -10,7 +10,7 @@
 
 ---
 #### Course Notes:
-Top 5 programming language (2021): 
+Top 5 programming language (2022): 
 * Java
 * Python
 * JavaScript
